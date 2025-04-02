@@ -1,7 +1,7 @@
 <idea-plugin>
-  <id>com.intellij.plugins.thrift-assistant</id>
+  <id>thrift-assistant</id>
   <name>Thrift Assistant</name>
-  <description>Support for Thrift language</description>
+  <description>Support for Thrift language.The forked repository from Thrift Support has been optimized to provide robust language support for Apache Thrift, with enhanced compatibility across multiple IDE versions through refined protocol abstraction and cross-platform code generation capabilities</description>
   <change-notes>
     <![CDATA[
       IntelliJ 2022.1 Support

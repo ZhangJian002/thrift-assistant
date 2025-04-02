@@ -9,8 +9,8 @@ subprojects {
     repositories {
         mavenLocal()
         mavenCentral()
-        maven { setUrl("https://repo.gradle.org/gradle/repo") }
-        maven { setUrl("https://maven.google.com/") }
+//        maven { setUrl("https://repo.gradle.org/gradle/repo") }
+//        maven { setUrl("https://maven.google.com/") }
         maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
     }
 
