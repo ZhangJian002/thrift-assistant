@@ -7,14 +7,14 @@
       IntelliJ 2021.2+ Support
     ]]>
   </change-notes>
-  <vendor>@fedor</vendor>
+  <vendor>zjay</vendor>
   <idea-version since-build="212.4746.92"/><!-- Will be patched by the patchPluginXml task -->
 
   <depends>com.intellij.modules.platform</depends>
-  <depends>com.intellij.modules.lang</depends>
-  <depends>com.intellij.modules.vcs</depends>
-  <depends>com.intellij.modules.xml</depends>
-  <depends>com.intellij.modules.xdebugger</depends>
+<!--  <depends>com.intellij.modules.lang</depends>-->
+<!--  <depends>com.intellij.modules.vcs</depends>-->
+<!--  <depends>com.intellij.modules.xml</depends>-->
+<!--  <depends>com.intellij.modules.xdebugger</depends>-->
   <depends optional="true" config-file="withJava.xml">com.intellij.modules.java</depends>
   <depends optional="true" config-file="withScala.xml">org.intellij.scala</depends>
 
