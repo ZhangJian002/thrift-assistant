@@ -1,0 +1,35 @@
+plugins {
+    id "org.jetbrains.intellij" version "0.7.3" apply false
+}
+
+subprojects {
+    apply plugin: 'java'
+    tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { setUrl("https://repo.gradle.org/gradle/repo") }
+        maven { setUrl("https://maven.google.com/") }
+        maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
+    }
+
+    apply plugin: 'org.jetbrains.intellij'
+    intellij {
+        version = project.property('ideaVersion')
+        plugins = ['java']
+        downloadSources = Boolean.valueOf(project.property('sources') as String)
+        sameSinceUntilBuild = Boolean.valueOf(project.property('isEAP') as String)
+    }
+
+    tasks.named('patchPluginXml') {
+        sinceBuild = project.property('ideaSinceVersion')
+        untilBuild = null
+    }
+
+    test {
+        testLogging {
+            exceptionFormat = 'full'
+        }
+    }
+}
