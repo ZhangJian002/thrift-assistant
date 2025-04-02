@@ -4,7 +4,6 @@ import com.intellij.navigation.ChooseByNameContributor;
 import com.intellij.navigation.ChooseByNameRegistry;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.util.Condition;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.util.text.StringUtil;
@@ -52,7 +51,6 @@ public class ThriftPsiUtil {
     if (fileInDir != null) {
       return fileInDir;
     }
-
 
     final VirtualFile includedVirtualFile = ContainerUtil.find(
       FilenameIndex.getVirtualFilesByName(

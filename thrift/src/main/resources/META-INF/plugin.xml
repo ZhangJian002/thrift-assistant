@@ -4,7 +4,7 @@
   <description>Support for Thrift language.The forked repository from Thrift Support has been optimized to provide robust language support for Apache Thrift, with enhanced compatibility across multiple IDE versions through refined protocol abstraction and cross-platform code generation capabilities</description>
   <change-notes>
     <![CDATA[
-      IntelliJ 2022.1 Support
+      IntelliJ 2021.2+ Support
     ]]>
   </change-notes>
   <vendor>@fedor</vendor>
