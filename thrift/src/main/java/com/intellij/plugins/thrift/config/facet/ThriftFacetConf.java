@@ -46,7 +46,7 @@ import java.util.List;
  * @author xBlackCat
  */
 @State(
-  name = "ThriftFacetConfiguration",
+  name = "ThriftAssistFacetConfiguration",
   storages = {
     @Storage("$MODULE_FILE$")
   }

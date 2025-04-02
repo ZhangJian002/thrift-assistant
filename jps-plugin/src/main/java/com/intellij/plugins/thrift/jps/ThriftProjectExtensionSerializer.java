@@ -12,8 +12,8 @@ import org.jetbrains.jps.model.serialization.JpsProjectExtensionSerializer;
  * @author xBlackCat
  */
 public class ThriftProjectExtensionSerializer extends JpsProjectExtensionSerializer {
-  public static final String NAME = "ThriftCompiler";
-  public static final String CONFIG_FILE_NAME = "thriftCompiler.xml";
+  public static final String NAME = "ThriftCompilerAssist";
+  public static final String CONFIG_FILE_NAME = "thriftCompilerAssist.xml";
 
   public ThriftProjectExtensionSerializer() {
     super(CONFIG_FILE_NAME, NAME);
