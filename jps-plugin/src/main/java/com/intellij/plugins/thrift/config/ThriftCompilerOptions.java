@@ -58,7 +58,7 @@ public class ThriftCompilerOptions extends JpsElementBase<ThriftCompilerOptions>
   }
 
   @NotNull
-  @Override
+//  @Override
   public ThriftCompilerOptions createCopy() {
     final ThriftCompilerOptions s = new ThriftCompilerOptions();
     final List<Generator> list = s.generators;
@@ -77,7 +77,7 @@ public class ThriftCompilerOptions extends JpsElementBase<ThriftCompilerOptions>
     return s;
   }
 
-  @Override
+//  @Override
   public void applyChanges(@NotNull ThriftCompilerOptions modified) {
     generators.clear();
     includes.clear();
