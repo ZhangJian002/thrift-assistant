@@ -42,7 +42,7 @@ public class StringUtils {
         return !isBlank(str);
     }
 
-    /** @deprecated */
+    
     public static String clean(String str) {
         return str == null ? "" : str.trim();
     }
@@ -585,12 +585,12 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String getNestedString(String str, String tag) {
         return substringBetween(str, tag, tag);
     }
 
-    /** @deprecated */
+    
     public static String getNestedString(String str, String open, String close) {
         return substringBetween(str, open, close);
     }
@@ -872,7 +872,7 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String concatenate(Object[] array) {
         return join((Object[])array, (String)null);
     }
@@ -1012,7 +1012,7 @@ public class StringUtils {
         return collection == null ? null : join(collection.iterator(), separator);
     }
 
-    /** @deprecated */
+    
     public static String deleteSpaces(String str) {
         return str == null ? null : CharSetUtils.delete(str, " \t\r\n\b");
     }
@@ -1264,7 +1264,7 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String overlayString(String text, String overlay, int start, int end) {
         return (new StringBuffer(start + overlay.length() + text.length() - end + 1)).append(text.substring(0, start)).append(overlay).append(text.substring(end)).toString();
     }
@@ -1333,12 +1333,12 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String chompLast(String str) {
         return chompLast(str, "\n");
     }
 
-    /** @deprecated */
+    
     public static String chompLast(String str, String sep) {
         if (str.length() == 0) {
             return str;
@@ -1348,7 +1348,7 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String getChomp(String str, String sep) {
         int idx = str.lastIndexOf(sep);
         if (idx == str.length() - sep.length()) {
@@ -1358,13 +1358,13 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String prechomp(String str, String sep) {
         int idx = str.indexOf(sep);
         return idx == -1 ? str : str.substring(idx + sep.length());
     }
 
-    /** @deprecated */
+    
     public static String getPrechomp(String str, String sep) {
         int idx = str.indexOf(sep);
         return idx == -1 ? "" : str.substring(0, idx + sep.length());
@@ -1386,7 +1386,7 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String chopNewline(String str) {
         int lastIdx = str.length() - 1;
         if (lastIdx <= 0) {
@@ -1405,7 +1405,7 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String escape(String str) {
         return StringEscapeUtils.escapeJava(str);
     }
@@ -1629,7 +1629,7 @@ public class StringUtils {
         return str != null && (strLen = str.length()) != 0 ? (new StringBuffer(strLen)).append(Character.toTitleCase(str.charAt(0))).append(str.substring(1)).toString() : str;
     }
 
-    /** @deprecated */
+    
     public static String capitalise(String str) {
         return capitalize(str);
     }
@@ -1639,7 +1639,7 @@ public class StringUtils {
         return str != null && (strLen = str.length()) != 0 ? (new StringBuffer(strLen)).append(Character.toLowerCase(str.charAt(0))).append(str.substring(1)).toString() : str;
     }
 
-    /** @deprecated */
+    
     public static String uncapitalise(String str) {
         return uncapitalize(str);
     }
@@ -1669,7 +1669,7 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String capitaliseAllWords(String str) {
         return WordUtils.capitalize(str);
     }
@@ -1843,7 +1843,7 @@ public class StringUtils {
         }
     }
 
-    /** @deprecated */
+    
     public static String reverseDelimitedString(String str, String separatorChars) {
         if (str == null) {
             return null;
