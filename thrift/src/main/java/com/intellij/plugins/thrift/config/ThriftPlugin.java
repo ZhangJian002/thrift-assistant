@@ -2,8 +2,8 @@ package com.intellij.plugins.thrift.config;
 
 import com.intellij.openapi.components.*;
 import com.intellij.plugins.thrift.jps.ThriftProjectExtensionSerializer;
-import org.apache.commons.lang.BooleanUtils;
-import org.apache.commons.lang.StringUtils;
+import com.intellij.plugins.thrift.util.BooleanUtils;
+import com.intellij.plugins.thrift.util.StringUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

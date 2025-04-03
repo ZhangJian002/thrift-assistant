@@ -27,7 +27,6 @@ import com.intellij.plugins.thrift.config.target.GeneratorType;
 import com.intellij.ui.*;
 import com.intellij.ui.popup.PopupFactoryImpl;
 import com.intellij.util.ui.UIUtil;
-import org.apache.commons.lang.NotImplementedException;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -287,7 +286,7 @@ public class ThriftFacetConf implements FacetConfiguration, PersistentStateCompo
       @Nullable
       @Override
       protected Generator addItem() {
-        throw new NotImplementedException("Should not be invoked");
+        throw new RuntimeException("Should not be invoked");
       }
 
       @Override

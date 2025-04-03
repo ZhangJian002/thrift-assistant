@@ -13,7 +13,7 @@ import com.intellij.plugins.thrift.config.target.Generator;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBTextField;
-import org.apache.commons.lang.StringUtils;
+import com.intellij.plugins.thrift.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.io.LocalFileFinder;

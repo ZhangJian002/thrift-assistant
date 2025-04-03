@@ -20,7 +20,7 @@ import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBTextField;
 import com.intellij.util.ui.JBInsets;
-import org.apache.commons.lang.StringUtils;
+import com.intellij.plugins.thrift.util.StringUtils;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
