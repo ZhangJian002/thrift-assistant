@@ -42,7 +42,7 @@ public class StringUtils {
         return !isBlank(str);
     }
 
-    
+
     public static String clean(String str) {
         return str == null ? "" : str.trim();
     }
@@ -1013,9 +1013,9 @@ public class StringUtils {
     }
 
     
-    public static String deleteSpaces(String str) {
-        return str == null ? null : CharSetUtils.delete(str, " \t\r\n\b");
-    }
+//    public static String deleteSpaces(String str) {
+//        return str == null ? null : CharSetUtils.delete(str, " \t\r\n\b");
+//    }
 
     public static String deleteWhitespace(String str) {
         if (isEmpty(str)) {

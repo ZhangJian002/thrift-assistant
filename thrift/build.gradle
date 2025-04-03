@@ -1,7 +1,7 @@
 jar.archiveFileName = "plugin.jar"
 
 patchPluginXml {
-    version = System.getenv().getOrDefault("CIRRUS_TAG", "1.3")
+    version = System.getenv().getOrDefault("CIRRUS_TAG", project.property('pluginVersion').toString())
 }
 
 publishPlugin {
