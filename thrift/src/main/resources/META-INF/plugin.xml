@@ -1,0 +1,104 @@
+<idea-plugin>
+  <id>thrift-assistant</id>
+  <name>Thrift Assistant</name>
+  <description>Support for Thrift language.The forked repository from Thrift Support has been optimized to provide robust language support for Apache Thrift, with enhanced compatibility across multiple IDE versions through refined protocol abstraction and cross-platform code generation capabilities</description>
+  <change-notes>
+    <![CDATA[
+      IntelliJ 2021.2+ Support
+    ]]>
+  </change-notes>
+  <vendor>zjay</vendor>
+  <idea-version since-build="212.4746.92"/><!-- Will be patched by the patchPluginXml task -->
+
+  <depends>com.intellij.modules.platform</depends>
+<!--  <depends>com.intellij.modules.lang</depends>-->
+<!--  <depends>com.intellij.modules.vcs</depends>-->
+<!--  <depends>com.intellij.modules.xml</depends>-->
+<!--  <depends>com.intellij.modules.xdebugger</depends>-->
+  <depends optional="true" config-file="withJava.xml">com.intellij.modules.java</depends>
+  <depends optional="true" config-file="withScala.xml">org.intellij.scala</depends>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="Thrift" implementationClass="com.intellij.plugins.thrift.ThriftFileType" fieldName="INSTANCE" language="thrift" extensions="thrift"/>
+    <lang.parserDefinition language="thrift" implementationClass="com.intellij.plugins.thrift.lang.parser.ThriftParserDefinition"/>
+    <completion.contributor language="any" implementationClass="com.intellij.plugins.thrift.completion.ThriftKeywordCompletionContributor"/>
+    <itemPresentationProvider forClass="com.intellij.plugins.thrift.lang.psi.ThriftTopLevelDeclaration"
+                              implementationClass="com.intellij.plugins.thrift.lang.psi.presentation.ThriftTopLevelDeclarationPresentationProvider"/>
+    <itemPresentationProvider forClass="com.intellij.plugins.thrift.lang.psi.ThriftSubDeclaration"
+                              implementationClass="com.intellij.plugins.thrift.lang.psi.presentation.ThriftSubDeclarationPresentationProvider"/>
+    <codeInsight.lineMarkerProvider language="thrift" implementationClass="com.intellij.plugins.thrift.editor.ThriftLineMarkerProvider"/>
+    <iconProvider implementation="com.intellij.plugins.thrift.ThriftIconProvider"/>
+    <lang.psiStructureViewFactory language="thrift" implementationClass="com.intellij.plugins.thrift.structure.ThriftStructureViewFactory"/>
+    <lang.findUsagesProvider language="thrift" implementationClass="com.intellij.plugins.thrift.lang.ThriftFindUsagesProvider"/>
+    <lang.elementManipulator forClass="com.intellij.plugins.thrift.lang.psi.ThriftInclude"
+                             implementationClass="com.intellij.plugins.thrift.lang.psi.manipulator.ThriftIncludeManipulator"/>
+
+    <lang.syntaxHighlighterFactory language="thrift"
+                                   implementationClass="com.intellij.plugins.thrift.highlight.ThriftSyntaxHighlighterFactory"/>
+    <annotator language="thrift" implementationClass="com.intellij.plugins.thrift.annotator.ThriftColorAnnotator"/>
+    <annotator language="thrift" implementationClass="com.intellij.plugins.thrift.annotator.ThrowsAnnotator"/>
+    <!--<lang.formatter/>-->
+
+    <typedHandler implementation="com.intellij.plugins.thrift.completion.ThriftTypeHandler"/>
+    <lang.braceMatcher language="thrift" implementationClass="com.intellij.plugins.thrift.ThriftBraceMatcher"/>
+    <lang.commenter language="thrift" implementationClass="com.intellij.plugins.thrift.ThriftCommenter"/>
+    <lang.implementationTextSelectioner language="thrift"
+                                        implementationClass="com.intellij.plugins.thrift.ThriftImplementationTextSelectioner"/>
+    <liveTemplateContext implementation="com.intellij.plugins.thrift.ThriftContext"/>
+
+    <!--<colorSettingsPage/>-->
+    <!--<codeStyleSettingsProvider/>-->
+
+    <!--<langCodeStyleSettingsProvider/>-->
+
+    <quoteHandler fileType="Thrift" className="com.intellij.plugins.thrift.ThriftQuoteHandler"/>
+
+    <fileBasedIndex implementation="com.intellij.plugins.thrift.index.ThriftDeclarationIndex"/>
+    <fileBasedIndex implementation="com.intellij.plugins.thrift.index.ThriftSubDeclarationIndex"/>
+    <gotoClassContributor implementation="com.intellij.plugins.thrift.ThriftClassContributor"/>
+    <gotoSymbolContributor implementation="com.intellij.plugins.thrift.ThriftSymbolContributor"/>
+
+    <localInspection language="thrift" shortName="ThriftUnresolvedInclude" bundle="ThriftBundle"
+                     key="thrift.inspection.unresolved.include"
+                     groupKey="inspections.group.name" enabledByDefault="true"
+                     implementationClass="com.intellij.plugins.thrift.inspections.ThriftUnresolvedIncludeInspection"/>
+    <localInspection language="thrift" shortName="ThriftTopLevelDeclarationDuplicates" bundle="ThriftBundle"
+                     key="thrift.inspection.duplicates.top_level_declaration"
+                     groupKey="inspections.group.name" enabledByDefault="true"
+                     implementationClass="com.intellij.plugins.thrift.inspections.ThriftTopLevelDeclarationDuplicatesInspection"/>
+    <localInspection language="thrift" shortName="ThriftIDDuplicates" bundle="ThriftBundle"
+                     key="thrift.inspection.duplicates.id"
+                     groupKey="inspections.group.name" enabledByDefault="true"
+                     implementationClass="com.intellij.plugins.thrift.inspections.ThriftIDDuplicatesInspection"/>
+    <localInspection language="thrift" shortName="ThriftNameDuplicates" bundle="ThriftBundle"
+                     key="thrift.inspection.duplicates.name"
+                     groupKey="inspections.group.name" enabledByDefault="true"
+                     implementationClass="com.intellij.plugins.thrift.inspections.ThriftNameDuplicatesInspection"/>
+    <annotator language="thrift" implementationClass="com.intellij.plugins.thrift.annotator.UnresolvedReferenceAnnotator"/>
+
+    <projectConfigurable instance="com.intellij.plugins.thrift.config.ThriftCompilerConfigurable" id="intellij-thrift"
+                         displayName="Thrift Compiler" parentId="project.propCompiler"/>
+
+    <frameworkSupport implementation="com.intellij.plugins.thrift.config.facet.ThriftFacetSupportProvider"/>
+    <facetType implementation="com.intellij.plugins.thrift.config.facet.ThriftFacetType"/>
+    <compileServer.plugin classpath="thrift-jps.jar" />
+    <spellchecker.support language="thrift" implementationClass="com.intellij.plugins.thrift.config.ThriftSpellcheckingStrategy"/>
+  </extensions>
+
+  <actions>
+    <action class="com.intellij.plugins.thrift.editor.GoToThriftDefinition"
+            id="com.intellij.plugins.thrift.editor.GoToThriftDefinition"
+            text="Go to Thrift Source">
+      <add-to-group group-id="RunContextPopupGroup" anchor="first"/>
+    </action>
+  </actions>
+  <project-components>
+    <component>
+      <loadForDefaultProject>true</loadForDefaultProject>
+      <implementation-class>com.intellij.plugins.thrift.config.ThriftPlugin</implementation-class>
+    </component>
+  </project-components>
+</idea-plugin>
